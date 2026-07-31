@@ -1,0 +1,53 @@
+🧠 Why This Is Important
+
+Without an API Gateway:
+Client
+ ├──► User Service
+ ├──► Product Service
+ └──► Order Service
+
+Clients need to know every service address.
+
+With an API Gateway:
+            Client
+               │
+               ▼
+         NGINX API Gateway
+       ┌──────┼──────┐
+       ▼      ▼      ▼
+ User Service Product Order
+    :5001      :5002   :5003
+
+Benefits:
+✅ Single entry point
+✅ Request routing
+✅ Load balancing
+✅ SSL termination
+✅ Authentication integration
+✅ Rate limiting support
+
+Used By :
+Netflix
+Amazon
+Uber
+Airbnb
+Kubernetes Ingress
+
+🛠 Tech Stack
+Python
+Flask
+NGINX
+Docker Compose
+
+📂 Project Structure
+api-gateway-nginx/
+│
+├── docker-compose.yml
+├── nginx.conf
+├── user_service/
+│   └── app.py
+├── product_service/
+│   └── app.py
+├── order_service/
+│   └── app.py
+└── README.md
